@@ -11,14 +11,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    companion object{
+        //val TAG: String = "MainActivity"
+        val TAG: String = MainActivity::class.java.simpleName
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         btnShowToast.setOnClickListener{
-            Log.i("MainActivity", "Btn was clicked")
-            //Toast.makeText(this, "Show Toast Button was clicked", Toast.LENGTH_SHORT).show()
+            //Log.i(MainActivity.TAG, "Btn was clicked")
+            Log.i(TAG, "Btn was clicked")
+            
 
+            //Toast.makeText(this, "Show Toast Button was clicked", Toast.LENGTH_SHORT).show()
             // Use of Extension Function
             showToast("Show Toast Button was clicked")
         }
