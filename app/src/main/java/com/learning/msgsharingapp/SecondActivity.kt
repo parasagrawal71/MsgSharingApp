@@ -10,6 +10,7 @@ class SecondActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
+        // Reading Message Data from Main Activity Screen
         val bundle: Bundle? = intent.extras
         val msg = bundle!!.getString("user_message")
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()

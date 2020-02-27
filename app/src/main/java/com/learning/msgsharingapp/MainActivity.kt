@@ -28,5 +28,18 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("user_message", message)
             startActivity(intent)
         }
+
+        btnShareToApps.setOnClickListener {
+            val message: String = userMessage.text.toString()
+
+            // Implicit Intent
+            var intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT, message)
+            intent.type = "text/plain"
+
+            startActivity(Intent.createChooser(intent, "Select the app: "))
+
+        }
     }
 }
