@@ -41,5 +41,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(intent, "Select the app: "))
 
         }
+
+        btnRecyclerView.setOnClickListener {
+            var intent = Intent(this, HobbiesActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
