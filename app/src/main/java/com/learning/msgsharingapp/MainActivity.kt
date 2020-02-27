@@ -1,5 +1,6 @@
 package com.learning.msgsharingapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +17,14 @@ class MainActivity : AppCompatActivity() {
             // Code
             Log.i("MainActivity", "Btn was clicked")
             Toast.makeText(this, "Show Toast Button was clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        sendMsgToNextActivity.setOnClickListener {
+            val message: String = userMessage.text.toString()
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
+            var intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
         }
     }
 }
