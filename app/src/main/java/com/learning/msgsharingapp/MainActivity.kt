@@ -14,16 +14,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnShowToast.setOnClickListener{
-            // Code
             Log.i("MainActivity", "Btn was clicked")
             Toast.makeText(this, "Show Toast Button was clicked", Toast.LENGTH_SHORT).show()
         }
 
         sendMsgToNextActivity.setOnClickListener {
             val message: String = userMessage.text.toString()
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+            // Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
+            // Explicit Intent
             var intent = Intent(this, SecondActivity::class.java)
+
+            intent.putExtra("user_message", message)
             startActivity(intent)
         }
     }
