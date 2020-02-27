@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.learning.msgsharingapp.Constants
 import com.learning.msgsharingapp.R
 import com.learning.msgsharingapp.showToast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         btnShowToast.setOnClickListener{
             //Log.i(MainActivity.TAG, "Btn was clicked")
             Log.i(TAG, "Btn was clicked")
-            
+
 
             //Toast.makeText(this, "Show Toast Button was clicked", Toast.LENGTH_SHORT).show()
             // Use of Extension Function
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             // Explicit Intent
             var intent = Intent(this, SecondActivity::class.java)
 
-            intent.putExtra("user_message", message)
+            intent.putExtra( Constants.USER_MSG_KEY, message)
             startActivity(intent)
         }
 
