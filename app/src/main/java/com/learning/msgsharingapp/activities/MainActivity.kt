@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.learning.msgsharingapp.R
+import com.learning.msgsharingapp.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +17,10 @@ class MainActivity : AppCompatActivity() {
 
         btnShowToast.setOnClickListener{
             Log.i("MainActivity", "Btn was clicked")
-            Toast.makeText(this, "Show Toast Button was clicked", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Show Toast Button was clicked", Toast.LENGTH_SHORT).show()
+
+            // Use of Extension Function
+            showToast("Show Toast Button was clicked")
         }
 
         sendMsgToNextActivity.setOnClickListener {
